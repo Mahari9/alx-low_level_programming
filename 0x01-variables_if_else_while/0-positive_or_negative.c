@@ -4,7 +4,7 @@
 /* more headers goes there */
 /* betty style doc for function main goes there */
 /**
-  * main – Identfying positive, negative or zero
+  * main - This is print positive,negative or zero
   *
   * Return: Always 0 (success)
   */
