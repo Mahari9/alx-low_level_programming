@@ -75,8 +75,8 @@ int _checknum(char *argv[], int n)
 
 /**
  * main - Entry point.
- * a program that multiplies two positive numbers.
- * @argc: arguments count.
+ * program that multiplies two positive numbers.
+ * @argc: number of arguments.
  * @argv: arguments vector.
  *
  * Return: 0 - success.
