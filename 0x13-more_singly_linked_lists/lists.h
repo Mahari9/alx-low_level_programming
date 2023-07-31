@@ -2,7 +2,7 @@
 #define LISTS_H
 
 #include <stdlib.h>
-#include <stdlio.h>
+#include <stdio.h>
 
 /**
  * struct list_s - singly linked list
@@ -11,11 +11,11 @@
  *
  * Description: singly linked list node structure
  */
-typedef struct list_s
+typedef struct listint_s
 {
 	int n;
-	struct list_s *next;
-} list_t;
+	struct listint_s *next;
+} listint_t;
 
 int _putchar(char c);
 size_t print_listint(const listint_t *h);
