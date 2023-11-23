@@ -8,23 +8,15 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int total, square;
-	int x;
-
-	if (b == NULL)
-		return (0);
-
-	for (x = 0; b[x]; x++)
-	{
-		if (b[x] != '0' && b[x] != '1')
-			return (0);
+       unsigned int result = 0;
+       
+       if (b == NULL)
+	       return (0);
+       for (; *b; ++b)
+       {
+	       if (*b != '0' && *b != '1')
+		       return (0);
+	       result = result * 2 + (*b - '0');
 	}
-
-	for (square = 1, total = 0, x--; x >= 0; x--, square *= 2)
-	{
-		if (b[x] == '1')
-			total += square;
-	}
-
-	return (total);
+       return (result);
 }
