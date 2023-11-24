@@ -1,30 +1,37 @@
 #include "main.h"
 
 /**
- * binary_to_uint - convert a binary number to an unsigned int
- * @b: b is pointing to a string of 0 and 1 chars
- * Return: the converted number, or 0 if there is one or more chars
- * in the string b that is not 0 or 1 and b is NULL
+ * binary_to_uint - converts a binary number to an
+ * unsigned int.
+ * @b: binary.
+ *
+ * Return: unsigned int.
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int total, square;
-	int x;
+  unsigned int ui;
+  int len, base_two;
 
-	if (!b)
-		return (0);
+  if (!b)
+    return (0);
 
-	for (x = 0; b[x]; x++)
-	{
-		if (b[x] != '0' && b[x] != '1')
-			return (0);
-	}
+  ui = 0;
 
-	for (square = 1, total = 0, x--; x >= 0; x--, square *= 2)
-	{
-		if (b[x] == '1')
-			total += square;
-	}
+  for (len = 0; b[len] != '\0'; len++)
+    ;
 
-	return (total);
+  for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+  {
+    if (b[len] != '0' && b[len] != '1')
+    {
+      return (0);
+    }
+
+    if (b[len] & 1)
+    {
+      ui += base_two;
+    }
+  }
+
+  return (ui);
 }
